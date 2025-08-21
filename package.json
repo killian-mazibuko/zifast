@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "react-helmet-async": "^1.2.2"
+  },
+  "name": "zifast",
+  "version": "1.0.0",
+  "description": "Project for ZiFast Web Application",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "cd backend && npm install  && cd ../frontend && npm install --force && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/killian-mazibuko/zifast.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/killian-mazibuko/zifast/issues"
+  },
+  "homepage": "https://github.com/killian-mazibuko/zifast#readme"
+}
