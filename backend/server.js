@@ -6,7 +6,6 @@ import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
-import serverless from 'serverless-http';
 dotenv.config();
 
 mongoose
@@ -36,17 +35,17 @@ app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
 
 // Serve static files from the React frontend app
-/* const __dirname = path.resolve();
+const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('/{*any}', (req, res) =>
   res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
-); */
+);
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-/* const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`serve at http://localhost:${port}`);
-}); */
-module.exports.handler = serverless(app);
+});
+module.exports.handler = app;
